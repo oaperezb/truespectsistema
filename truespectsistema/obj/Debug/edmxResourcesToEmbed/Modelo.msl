@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TruespectModelStoreContainer" CdmEntityContainer="TruespectEntities">
+    <EntitySetMapping Name="usuarios">
+      <EntityTypeMapping TypeName="TruespectModel.usuarios">
+        <MappingFragment StoreEntitySet="usuarios">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="fecha_baja" ColumnName="fecha_baja" />
+          <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+          <ScalarProperty Name="rfc" ColumnName="rfc" />
+          <ScalarProperty Name="id_tpo_usuario" ColumnName="id_tpo_usuario" />
+          <ScalarProperty Name="tpo_usuario" ColumnName="tpo_usuario" />
+          <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
+          <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="anios">
+      <EntityTypeMapping TypeName="TruespectModel.anios">
+        <MappingFragment StoreEntitySet="anios">
+          <ScalarProperty Name="AÑO" ColumnName="AÑO" />
+          <ScalarProperty Name="id_año" ColumnName="id_año" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="categoria">
+      <EntityTypeMapping TypeName="TruespectModel.categoria">
+        <MappingFragment StoreEntitySet="categoria">
+          <ScalarProperty Name="nombre_categoria" ColumnName="nombre_categoria" />
+          <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="meses">
+      <EntityTypeMapping TypeName="TruespectModel.meses">
+        <MappingFragment StoreEntitySet="meses">
+          <ScalarProperty Name="MES" ColumnName="MES" />
+          <ScalarProperty Name="ID_MES" ColumnName="ID_MES" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="registro_almacen">
+      <EntityTypeMapping TypeName="TruespectModel.registro_almacen">
+        <MappingFragment StoreEntitySet="registro_almacen">
+          <ScalarProperty Name="apellido_usuario" ColumnName="apellido_usuario" />
+          <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
+          <ScalarProperty Name="usuario_registrar" ColumnName="usuario_registrar" />
+          <ScalarProperty Name="precio_total" ColumnName="precio_total" />
+          <ScalarProperty Name="precio_unidad" ColumnName="precio_unidad" />
+          <ScalarProperty Name="fecha_salida" ColumnName="fecha_salida" />
+          <ScalarProperty Name="fecha_ingresa" ColumnName="fecha_ingresa" />
+          <ScalarProperty Name="observacion" ColumnName="observacion" />
+          <ScalarProperty Name="estado_de_material" ColumnName="estado_de_material" />
+          <ScalarProperty Name="descripcion_material" ColumnName="descripcion_material" />
+          <ScalarProperty Name="unidad" ColumnName="unidad" />
+          <ScalarProperty Name="cantidad_almacen2" ColumnName="cantidad_almacen2" />
+          <ScalarProperty Name="cantidad_almacen1" ColumnName="cantidad_almacen1" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="codigo_categoria" ColumnName="codigo_categoria" />
+          <ScalarProperty Name="id_articulo" ColumnName="id_articulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ciudades">
+      <EntityTypeMapping TypeName="TruespectModel.ciudades">
+        <MappingFragment StoreEntitySet="ciudades">
+          <ScalarProperty Name="ciudad" ColumnName="ciudad" />
+          <ScalarProperty Name="id_ciudad" ColumnName="id_ciudad" />
+          <ScalarProperty Name="id_estados" ColumnName="id_estados" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estados">
+      <EntityTypeMapping TypeName="TruespectModel.estados">
+        <MappingFragment StoreEntitySet="estados">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="id_estado" ColumnName="id_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sucursal">
+      <EntityTypeMapping TypeName="TruespectModel.sucursal">
+        <MappingFragment StoreEntitySet="sucursal">
+          <ScalarProperty Name="nombre_sucuarsal" ColumnName="nombre_sucuarsal" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="ciudad" ColumnName="ciudad" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

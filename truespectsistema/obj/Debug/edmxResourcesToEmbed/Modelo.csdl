@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TruespectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TruespectEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="usuarios" EntityType="TruespectModel.usuarios" />
+    <EntitySet Name="anios" EntityType="TruespectModel.anios" />
+    <EntitySet Name="categoria" EntityType="TruespectModel.categoria" />
+    <EntitySet Name="meses" EntityType="TruespectModel.meses" />
+    <EntitySet Name="registro_almacen" EntityType="TruespectModel.registro_almacen" />
+    <EntitySet Name="ciudades" EntityType="TruespectModel.ciudades" />
+    <EntitySet Name="estados" EntityType="TruespectModel.estados" />
+    <EntitySet Name="sucursal" EntityType="TruespectModel.sucursal" />
+  </EntityContainer>
+  <EntityType Name="usuarios">
+    <Key>
+      <PropertyRef Name="id_empleado" />
+    </Key>
+    <Property Name="id_empleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombres" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="apellidos" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="usuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="contraseña" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tpo_usuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="id_tpo_usuario" Type="Int32" Nullable="false" />
+    <Property Name="rfc" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_registro" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="fecha_baja" Type="DateTime" Precision="0" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="anios">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_año" Type="Int32" />
+    <Property Name="AÑO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="categoria">
+    <Key>
+      <PropertyRef Name="id_categoria" />
+    </Key>
+    <Property Name="id_categoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre_categoria" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="meses">
+    <Key>
+      <PropertyRef Name="ID_MES" />
+    </Key>
+    <Property Name="ID_MES" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MES" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="registro_almacen">
+    <Key>
+      <PropertyRef Name="id_articulo" />
+    </Key>
+    <Property Name="id_articulo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codigo_categoria" Type="Int32" Nullable="false" />
+    <Property Name="codigo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cantidad_almacen1" Type="Int32" Nullable="false" />
+    <Property Name="cantidad_almacen2" Type="Int32" Nullable="false" />
+    <Property Name="unidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion_material" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="estado_de_material" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="observacion" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_ingresa" Type="DateTime" Precision="0" />
+    <Property Name="fecha_salida" Type="DateTime" Precision="0" />
+    <Property Name="precio_unidad" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="precio_total" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="usuario_registrar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nombre_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="apellido_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ciudades">
+    <Key>
+      <PropertyRef Name="id_ciudad" />
+    </Key>
+    <Property Name="id_estados" Type="Int32" Nullable="false" />
+    <Property Name="id_ciudad" Type="Int32" Nullable="false" />
+    <Property Name="ciudad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="estados">
+    <Key>
+      <PropertyRef Name="id_estado" />
+    </Key>
+    <Property Name="id_estado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="estado" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sucursal">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ciudad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="nombre_sucuarsal" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>
