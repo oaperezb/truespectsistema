@@ -94,6 +94,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Administrador.aspx" />
+    <Content Include="App_Data\Truespect.ldf">
+      <DependentUpon>Truespect.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Truespect.mdf" />
     <Content Include="bootstrap\css\bootstrap.css" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.svg" />
@@ -213,6 +217,7 @@
       <LastGenOutput>Modelo.Context.cs</LastGenOutput>
       <DependentUpon>Modelo.edmx</DependentUpon>
     </Content>
+    <Content Include="Modelo.edmx.sql" />
     <Content Include="Modelo.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Modelo.edmx</DependentUpon>
@@ -1040,6 +1045,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
