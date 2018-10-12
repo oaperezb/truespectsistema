@@ -213,6 +213,7 @@
       <LastGenOutput>Modelo.Context.cs</LastGenOutput>
       <DependentUpon>Modelo.edmx</DependentUpon>
     </Content>
+    <Content Include="Modelo.edmx.sql" />
     <Content Include="Modelo.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Modelo.edmx</DependentUpon>
@@ -1039,6 +1040,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

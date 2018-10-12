@@ -1,41 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="TruespectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="TruespectModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TruespectModelStoreContainer">
+    <EntitySet Name="usuarios" EntityType="TruespectModel.Store.usuarios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="anios" EntityType="TruespectModel.Store.anios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="categoria" EntityType="TruespectModel.Store.categoria" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="meses" EntityType="TruespectModel.Store.meses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="registro_almacen" EntityType="TruespectModel.Store.registro_almacen" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ciudades" EntityType="TruespectModel.Store.ciudades" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="estados" EntityType="TruespectModel.Store.estados" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sucursal" EntityType="TruespectModel.Store.sucursal" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="usuarios">
+    <Key>
+      <PropertyRef Name="id_empleado" />
+    </Key>
+    <Property Name="id_empleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombres" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="apellidos" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="usuario" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="contraseña" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="tpo_usuario" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="id_tpo_usuario" Type="int" Nullable="false" />
+    <Property Name="rfc" Type="varchar" Nullable="true" MaxLength="13" />
+    <Property Name="fecha_registro" Type="datetime" Nullable="false" />
+    <Property Name="fecha_baja" Type="datetime" Nullable="true" />
+    <Property Name="status" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
   <EntityType Name="anios">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="id_año" Type="int" />
-    <Property Name="AÑO" Type="varchar" MaxLength="50" />
+    <Property Name="id_año" Type="int" Nullable="true" />
+    <Property Name="AÑO" Type="varchar" Nullable="true" MaxLength="50" />
   </EntityType>
   <EntityType Name="categoria">
     <Key>
       <PropertyRef Name="id_categoria" />
     </Key>
     <Property Name="id_categoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nombre_categoria" Type="varchar" MaxLength="500" Nullable="false" />
-  </EntityType>
-  <EntityType Name="ciudades">
-    <Key>
-      <PropertyRef Name="id_ciudad" />
-    </Key>
-    <Property Name="id_estados" Type="int" Nullable="false" />
-    <Property Name="id_ciudad" Type="int" Nullable="false" />
-    <Property Name="ciudad" Type="varchar" MaxLength="50" Nullable="false" />
-  </EntityType>
-  <EntityType Name="estados">
-    <Key>
-      <PropertyRef Name="id_estado" />
-    </Key>
-    <Property Name="id_estado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="estado" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="nombre_categoria" Type="varchar" Nullable="false" MaxLength="500" />
   </EntityType>
   <EntityType Name="meses">
     <Key>
       <PropertyRef Name="ID_MES" />
     </Key>
     <Property Name="ID_MES" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="MES" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MES" Type="varchar" Nullable="false" MaxLength="50" />
   </EntityType>
   <EntityType Name="registro_almacen">
     <Key>
@@ -43,54 +54,43 @@
     </Key>
     <Property Name="id_articulo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="codigo_categoria" Type="int" Nullable="false" />
-    <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="codigo" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="cantidad_almacen1" Type="int" Nullable="false" />
     <Property Name="cantidad_almacen2" Type="int" Nullable="false" />
-    <Property Name="unidad" Type="varchar" MaxLength="50" />
-    <Property Name="descripcion_material" Type="varchar" MaxLength="5000" />
-    <Property Name="estado_de_material" Type="varchar" MaxLength="8" />
-    <Property Name="observacion" Type="varchar" MaxLength="5000" />
-    <Property Name="fecha_ingresa" Type="date" />
-    <Property Name="fecha_salida" Type="date" />
-    <Property Name="precio_unidad" Type="decimal" Precision="18" Scale="2" />
-    <Property Name="precio_total" Type="decimal" Precision="18" Scale="2" />
-    <Property Name="usuario_registrar" Type="varchar" MaxLength="50" />
-    <Property Name="nombre_usuario" Type="varchar" MaxLength="50" />
-    <Property Name="apellido_usuario" Type="varchar" MaxLength="50" />
+    <Property Name="unidad" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="descripcion_material" Type="varchar" Nullable="true" MaxLength="5000" />
+    <Property Name="estado_de_material" Type="varchar" Nullable="true" MaxLength="8" />
+    <Property Name="observacion" Type="varchar" Nullable="true" MaxLength="5000" />
+    <Property Name="fecha_ingresa" Type="datetime" Nullable="true" />
+    <Property Name="fecha_salida" Type="datetime" Nullable="true" />
+    <Property Name="precio_unidad" Type="decimal" Nullable="true" Precision="18" Scale="2" />
+    <Property Name="precio_total" Type="decimal" Nullable="true" Precision="18" Scale="2" />
+    <Property Name="usuario_registrar" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="nombre_usuario" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="apellido_usuario" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ciudades">
+    <Key>
+      <PropertyRef Name="id_ciudad" />
+    </Key>
+    <Property Name="id_estados" Type="int" Nullable="false" />
+    <Property Name="id_ciudad" Type="int" Nullable="false" />
+    <Property Name="ciudad" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="estados">
+    <Key>
+      <PropertyRef Name="id_estado" />
+    </Key>
+    <Property Name="id_estado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="estado" Type="varchar" Nullable="false" MaxLength="500" />
   </EntityType>
   <EntityType Name="sucursal">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ciudad" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="estado" Type="varchar" MaxLength="80" Nullable="false" />
-    <Property Name="nombre_sucuarsal" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ciudad" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="estado" Type="varchar" Nullable="false" MaxLength="80" />
+    <Property Name="nombre_sucuarsal" Type="varchar" Nullable="false" MaxLength="50" />
   </EntityType>
-  <EntityType Name="usuarios">
-    <Key>
-      <PropertyRef Name="id_empleado" />
-    </Key>
-    <Property Name="id_empleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nombres" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="apellidos" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="usuario" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="contraseña" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="tpo_usuario" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="id_tpo_usuario" Type="int" Nullable="false" />
-    <Property Name="rfc" Type="varchar" MaxLength="13" />
-    <Property Name="fecha_registro" Type="date" Nullable="false" />
-    <Property Name="fecha_baja" Type="date" />
-    <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
-  </EntityType>
-  <EntityContainer Name="TruespectModelStoreContainer">
-    <EntitySet Name="anios" EntityType="Self.anios" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="categoria" EntityType="Self.categoria" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ciudades" EntityType="Self.ciudades" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="estados" EntityType="Self.estados" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="meses" EntityType="Self.meses" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="registro_almacen" EntityType="Self.registro_almacen" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sucursal" EntityType="Self.sucursal" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
-  </EntityContainer>
 </Schema>
