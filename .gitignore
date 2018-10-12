@@ -3,3 +3,5 @@
 ################################################################################
 
 /.vs/truespectsistema/v15/Server/sqlite3/storage.ide-wal
+/.vs
+/truespectsistema/obj/Release
